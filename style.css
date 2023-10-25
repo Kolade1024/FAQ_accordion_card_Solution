@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css?family=Kumbh+Sans");
+
+/* VARIABLES */
+:root {
+  /* COLOR */
+  --BG: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  --FC1: hsl(238, 29%, 16%);
+  --FC2: hsl(14, 88%, 65%);
+  --FC3: hsl(240, 6%, 50%);
+  --FC4: hsl(237, 12%, 33%);
+  --DIVIDERS: hsl(240, 5%, 91%);
+
+  /* FONTS */
+  --FW1: 400;
+  --FW2: 700;
+  --FF: "Kumbh Sans";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: var(--BG);
+  min-height: 100vh;
+  font-family: var(--FF);
+}
+
+.container {
+  width: 100%;
+  padding: 4rem 1rem 2rem 1rem;
+}
+
+main {
+  position: relative;
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 9rem 1rem 1rem 2rem;
+  width: 100%;
+  margin-top: 6rem;
+  z-index: 1;
+}
+
+main .illustration_mobile {
+  max-width: 400px;
+  position: absolute;
+  width: 75%;
+  bottom: 85%;
+  right: 13%;
+}
+
+main .illustration_mobile .shadow {
+  position: absolute;
+  z-index: 2;
+  bottom: -16%;
+  right: 4%;
+}
+
+main .pattern,
+main .desktop_image,
+main .box {
+  display: none;
+}
+
+.FAQ {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.FAQ h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.FAQ .accordion {
+  color: var(--FC3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--DIVIDERS);
+  padding-bottom: 1.2rem;
+  gap: 1rem;
+}
+
+.FAQ .question {
+  width: 100%;
+  color: var(--FC3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.FAQ .accordion .question .qtext:hover {
+  color: var(--FC2);
+}
+
+.arrowTransform {
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+.questionColor {
+  color: black;
+}
+
+.accordion .ans {
+  display: none;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 430px) {
+  main .illustration_mobile {
+    bottom: 84%;
+    right: 13%;
+  }
+
+  main .illustration_mobile .shadow {
+    top: 9rem;
+    right: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  main .pattern,
+  main .desktop_image,
+  main .box {
+    display: block;
+  }
+
+  body {
+    min-height: 115vh;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 2;
+    min-height: 100vh;
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    max-width: 700px;
+    justify-content: flex-end;
+    padding: 2rem 2rem 1rem 2rem;
+  }
+
+  main .illustration_mobile {
+    display: none;
+  }
+
+  main .desktop_image {
+    position: absolute;
+    max-width: 300px;
+    left: -2rem;
+    top: 7rem;
+  }
+  main .pattern {
+    position: absolute;
+    max-width: 600px;
+    left: -14rem;
+    top: 0rem;
+  }
+
+  main .box {
+    position: absolute;
+    max-width: 120px;
+    left: -3rem;
+    top: 12rem;
+  }
+
+  .FAQ {
+    max-width: 300px;
+  }
+  .FAQ h1 {
+    width: 100%;
+    text-align: left;
+  }
+}
